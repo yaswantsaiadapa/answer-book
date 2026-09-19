@@ -4,3 +4,4 @@ pypdf
 pillow 
 openai 
 pydantic
+groq
