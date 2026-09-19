@@ -1,86 +1,21 @@
-# OS / System files
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Editor / IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Build / Compiled files
-build/
-bin/
-obj/
-out/
-dist/
-*.o
-*.obj
-*.exe
-*.out
-*.a
-*.so
-*.dll
-*.dylib
-
-# C / C++
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-compile_commands.json
-*.cmake
-
-# Python
-**pycache**/
+# Python bytecode & cache
+__pycache__/
 *.py[cod]
 *$py.class
-.venv/
+
+# Virtual environments
 venv/
 env/
-ENV/
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
+.venv/
 
-# Node.js / JavaScript
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# Environment / Secrets
+# Secrets & Environment variables (NEVER COMMIT)
 .env
-.env.*
-!.env.example
 
-# Logs
-*.log
-logs/
+# Testing & IDE caches
+.pytest_cache/
+.vscode/
+.idea/
 
-# Temporary files
-*.tmp
-*.temp
-*.bak
-*.cache
-
-# Coverage / Testing
-coverage/
-.coverage
-htmlcov/
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-
-# Archives
-*.zip
-*.tar
-*.gz
-*.7z
-*.rar
-
-# data 
-extracted/
+# OS specific files
+.DS_Store
+Thumbs.db

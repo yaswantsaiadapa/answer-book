@@ -1,0 +1,158 @@
+[
+  {
+    "paper_metadata": {
+      "paper_id": "question_paper_455",
+      "subject": "Mathematics Part 1",
+      "class": "Class 9",
+      "exam": "CBSE Annual Exam",
+      "total_marks": 80,
+      "time_allowed": "3h",
+      "board": "CBSE"
+    },
+    "questions": [
+      {
+        "number": "2",
+        "section": "A",
+        "text": "Using the identity (a + b)² = a² + 2ab + b², what is the expansion of (5x + 2y)²?",
+        "marks": 1,
+        "type": "mcq",
+        "options": [
+          "(A) 25x² + 10xy + 4y²",
+          "(B) 5x² + 20xy + 2y²",
+          "(C) 5x² + 10xy + 2y²",
+          "(D) 25x² + 20xy + 4y²"
+        ],
+        "has_figure": false,
+        "page": 1,
+        "choice_group": null,
+        "chapter": "Ch 4: Exploring Algebraic Identities"
+      },
+      {
+        "number": "21",
+        "section": "B",
+        "text": "Why is π classified as an irrational number?",
+        "marks": 2,
+        "type": "short",
+        "options": null,
+        "has_figure": false,
+        "page": 4,
+        "choice_group": "Attempt 5 out of 7",
+        "chapter": "Ch 6: Measuring Space: Perimeter and Area"
+      },
+      {
+        "number": "22",
+        "section": "B",
+        "text": "Find the value of 119² by expressing 119 as 100 + 10 + 9 and applying a suitable identity.",
+        "marks": 2,
+        "type": "numerical",
+        "options": null,
+        "has_figure": false,
+        "page": 4,
+        "choice_group": "Attempt 5 out of 7",
+        "chapter": "Ch 4: Exploring Algebraic Identities"
+      },
+      {
+        "number": "26",
+        "section": "C",
+        "text": "The number 0.9̄ (which means 0.99999 ...) is a rational number. Using algebra (let x = 0.9̄, multiply by 10, and subtract), explain why 0.9̄ is exactly equal to 1.",
+        "marks": 3,
+        "type": "numerical",
+        "options": null,
+        "has_figure": false,
+        "page": 5,
+        "choice_group": "Attempt 5 out of 7",
+        "chapter": "Ch 3: The World of Numbers"
+      },
+      {
+        "number": "31",
+        "section": "D",
+        "text": "Suppose a plant has height 1.75 feet and it grows by 0.5 feet each month.\n(i) Find the height after 7 months.\n(ii) Make a table of values for t varying from 0 to 10 months and show how the height, h, increases every month.\n(iii) Find an expression that relates h and t, and explain why it represents linear growth.",
+        "marks": 5,
+        "type": "long",
+        "options": null,
+        "has_figure": false,
+        "page": 6,
+        "choice_group": "Attempt 4 out of 6",
+        "chapter": "Ch 2: Introduction to Linear Polynomials"
+      }
+    ]
+  },
+  {
+    "paper_metadata": {
+      "paper_id": "question_paper_463",
+      "subject": "Science",
+      "class": "Class 9",
+      "exam": "CBSE Half-Yearly Exam",
+      "total_marks": 80,
+      "time_allowed": "3h",
+      "board": "CBSE"
+    },
+    "questions": [
+      {
+        "number": "1",
+        "section": "A",
+        "text": "Assertion (A): Uncontrolled cell divisions leading to tumour formation are a result of errors in mitosis, rather than errors in meiosis.\nReason (R): Faulty meiosis may cause early pregnancy loss or reduced fertility, while errors in mitosis lead to an abnormal number of chromosomes in body cells.",
+        "marks": 1,
+        "type": "mcq",
+        "options": [
+          "(A) Both A and R are true, and R is the correct explanation of A.",
+          "(B) Both A and R are true, but R is NOT the correct explanation of A.",
+          "(C) A is true but R is false.",
+          "(D) A is false but R is true."
+        ],
+        "has_figure": false,
+        "page": 1,
+        "choice_group": null,
+        "chapter": "Ch 2: Cell: The Building Block of Life"
+      },
+      {
+        "number": "21",
+        "section": "B",
+        "text": "At what minimum difference in boiling points can two miscible liquids be separated by distillation?",
+        "marks": 2,
+        "type": "short",
+        "options": null,
+        "has_figure": false,
+        "page": 4,
+        "choice_group": "Attempt 5 out of 7",
+        "chapter": "Ch 5: Exploring Mixtures and their Separation"
+      },
+      {
+        "number": "22",
+        "section": "B",
+        "text": "An object of mass 5 kg is near the Earth's surface. Calculate the gravitational force acting on it. (Take g = 9.8 m s⁻²)",
+        "marks": 2,
+        "type": "numerical",
+        "options": null,
+        "has_figure": false,
+        "page": 4,
+        "choice_group": "Attempt 5 out of 7",
+        "chapter": "Ch 6: How Forces Affect Motion"
+      },
+      {
+        "number": "26",
+        "section": "C",
+        "text": "When creating a simple model of a cricket ball being hit for a six, on what basis do scientists decide which details to include and which to ignore? Give one example of each.",
+        "marks": 3,
+        "type": "short",
+        "options": null,
+        "has_figure": false,
+        "page": 5,
+        "choice_group": "Attempt 5 out of 7",
+        "chapter": "Ch 1: Exploration: Entering the World of Secondary Science"
+      },
+      {
+        "number": "31",
+        "section": "D",
+        "text": "Explain the force of friction and how it affects the motion of objects. When is an object able to overcome friction and start moving? A table is moved across the floor at a constant velocity using a horizontal force F. What is the magnitude of the frictional force exerted by the floor on the table? Justify your answer using Newton's laws.",
+        "marks": 5,
+        "type": "long",
+        "options": null,
+        "has_figure": false,
+        "page": 6,
+        "choice_group": "Attempt 4 out of 6",
+        "chapter": "Ch 6: How Forces Affect Motion"
+      }
+    ]
+  }
+]
