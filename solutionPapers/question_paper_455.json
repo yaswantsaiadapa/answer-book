@@ -1,0 +1,202 @@
+{
+  "paper_id": "question_paper_455",
+  "metadata": {
+    "paper_id": "question_paper_455",
+    "subject": "Mathematics Part 1",
+    "class": "Class 9",
+    "exam": "CBSE Annual Exam",
+    "total_marks": 80,
+    "time_allowed": "3h",
+    "board": "CBSE"
+  },
+  "total_questions": 5,
+  "solutions": [
+    {
+      "question_number": "2",
+      "answer": "(D) 25x² + 20xy + 4y²",
+      "steps": [
+        "Identify the terms in the expression (5x + 2y)² by comparing it to the identity (a + b)² = a² + 2ab + b². Here, a = 5x and b = 2y.",
+        "Calculate the square of the first term (a²): (5x)² = 25x².",
+        "Calculate twice the product of the two terms (2ab): 2 * (5x) * (2y) = 20xy.",
+        "Calculate the square of the second term (b²): (2y)² = 4y².",
+        "Combine these results to form the final expansion: 25x² + 20xy + 4y²."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "selecting correct option with proper justification"
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "(A) 25x² + 10xy + 4y²",
+          "why": "The student correctly squares the individual terms (5x and 2y) but forgets to multiply the cross-term (ab) by 2, calculating 5x * 2y = 10xy instead of 2 * 5x * 2y = 20xy."
+        },
+        {
+          "wrong": "(B) 5x² + 20xy + 2y²",
+          "why": "The student correctly calculates the middle term (2ab) but fails to square the coefficients of the first and last terms, leaving them as 5x² and 2y² instead of (5x)² and (2y)²."
+        },
+        {
+          "wrong": "(C) 5x² + 10xy + 2y²",
+          "why": "The student makes two errors: they fail to square the coefficients of the first and last terms AND they forget to multiply the cross-term by 2."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "21",
+      "answer": "π is classified as an irrational number because it cannot be expressed as a fraction of two integers (p/q) and its decimal expansion is non-terminating and non-repeating.",
+      "steps": [
+        "An irrational number is defined as a real number that cannot be expressed in the form p/q, where p and q are integers and q ≠ 0.",
+        "The decimal expansion of π (3.14159265...) is non-terminating and non-repeating, which is a key characteristic of irrational numbers."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly stating that π cannot be expressed as a fraction of two integers (p/q)."
+        },
+        {
+          "marks": 1,
+          "for": "Mentioning that the decimal expansion of π is non-terminating and non-repeating."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "π is irrational because it is a circle's circumference divided by its diameter.",
+          "why": "This is a definition of π, not a reason for its irrationality. It does not address the mathematical property of being non-expressible as a fraction."
+        },
+        {
+          "wrong": "π is irrational because it has many decimal places.",
+          "why": "Having many decimal places does not make a number irrational; it must be non-terminating and non-repeating to be classified as such."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "22",
+      "answer": "14161",
+      "steps": [
+        "Express 119 as the sum of three terms: 119 = 100 + 10 + 9.",
+        "Apply the algebraic identity for the square of a trinomial: (a + b + c)² = a² + b² + c² + 2ab + 2bc + 2ca.",
+        "Substitute the values a = 100, b = 10, and c = 9 into the identity: (100 + 10 + 9)² = 100² + 10² + 9² + 2(100)(10) + 2(10)(9) + 2(9)(100).",
+        "Calculate the individual squares: 100² = 10000, 10² = 100, and 9² = 81.",
+        "Calculate the cross-terms: 2(100)(10) = 2000, 2(10)(9) = 180, and 2(9)(100) = 1800.",
+        "Sum all the calculated values: 10000 + 100 + 81 + 2000 + 180 + 1800.",
+        "Perform the final addition: 10000 + 2000 + 1800 + 100 + 180 + 81 = 14161."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly identifying and applying the identity (a+b+c)² = a² + b² + c² + 2ab + 2bc + 2ca with proper substitution."
+        },
+        {
+          "marks": 1,
+          "for": "Correct calculation of all terms and the final sum to arrive at 14161."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "12100",
+          "why": "Using the identity (a+b)² = a² + b² + 2ab incorrectly by treating 119 as (100+19) but miscalculating 19² or the cross term, or simply squaring 110 and adding 9 incorrectly."
+        },
+        {
+          "wrong": "14141",
+          "why": "Forgetting to include one of the cross-terms (e.g., missing 2bc or 2ca) or making an arithmetic error in summing the components (e.g., 10000+2000+1800+100+180+81 = 14161, but adding 100+180+81 as 141 instead of 361)."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "26",
+      "answer": "1",
+      "steps": [
+        "Let x = 0.9̄, which represents the infinite decimal 0.99999...",
+        "Multiply both sides of the equation by 10 to shift the decimal point one place to the right: 10x = 9.99999...",
+        "Observe that the decimal part of 10x (0.99999...) is identical to x. Therefore, we can substitute x for the decimal part: 10x = 9 + x.",
+        "Subtract x from both sides of the equation to isolate the variable: 10x - x = 9.",
+        "Simplify the left side: 9x = 9.",
+        "Divide both sides by 9 to solve for x: x = 9/9 = 1.",
+        "Conclusion: Since x = 0.9̄ and x = 1, it follows that 0.9̄ = 1."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly setting up the equation x = 0.9̄ and multiplying by 10 to get 10x = 9.9̄"
+        },
+        {
+          "marks": 1,
+          "for": "Correctly subtracting x from 10x and simplifying to 9x = 9"
+        },
+        {
+          "marks": 1,
+          "for": "Solving for x to obtain the final result x = 1"
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "0.9̄ = 0.9",
+          "why": "Students often confuse the repeating decimal 0.999... with the terminating decimal 0.9, failing to recognize the infinite nature of the series."
+        },
+        {
+          "wrong": "10x = 9.9",
+          "why": "Students incorrectly truncate the decimal after multiplying by 10, writing 9.9 instead of 9.999..., which breaks the algebraic substitution step."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "31",
+      "answer": "The height after 7 months is 5.25 feet. The relationship is defined by the linear equation h = 1.75 + 0.5t, where the constant rate of change (slope) is 0.5 feet per month.",
+      "steps": [
+        "Identify the initial height (h₀) as 1.75 feet and the constant rate of growth (r) as 0.5 feet per month.",
+        "Calculate the height after 7 months using the formula h = h₀ + rt: h = 1.75 + (0.5 × 7) = 1.75 + 3.5 = 5.25 feet.",
+        "Construct a table of values for t = 0 to 10, showing that for every increment of 1 in t, h increases by exactly 0.5 (e.g., t=0, h=1.75; t=1, h=2.25; ... t=10, h=6.75).",
+        "Derive the linear expression relating h and t: h = 1.75 + 0.5t, which is in the slope-intercept form y = mx + c.",
+        "Explain that this represents linear growth because the rate of change (slope) is constant, meaning the height increases by a fixed amount (0.5 feet) for each unit increase in time."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correct calculation of height after 7 months (5.25 feet)."
+        },
+        {
+          "marks": 1,
+          "for": "Accurate table of values for t = 0 to 10 showing consistent increments."
+        },
+        {
+          "marks": 1,
+          "for": "Correct derivation of the linear expression h = 1.75 + 0.5t."
+        },
+        {
+          "marks": 1,
+          "for": "Identification of the constant rate of change (slope) as 0.5."
+        },
+        {
+          "marks": 1,
+          "for": "Clear explanation linking constant rate of change to the definition of linear growth."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Stating the formula as h = 0.5t + 1.75 without explaining the terms.",
+          "why": "Loses marks for not explicitly identifying the initial value and the rate of change, which are required to justify the 'linear' nature."
+        },
+        {
+          "wrong": "Providing the table but skipping the calculation for t=7 or making arithmetic errors in the table.",
+          "why": "Loses marks for incomplete data or calculation errors, which undermines the validity of the derived linear relationship."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    }
+  ]
+}

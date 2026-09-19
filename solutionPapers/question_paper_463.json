@@ -1,0 +1,193 @@
+{
+  "paper_id": "question_paper_463",
+  "metadata": {
+    "paper_id": "question_paper_463",
+    "subject": "Science",
+    "class": "Class 9",
+    "exam": "CBSE Half-Yearly Exam",
+    "total_marks": 80,
+    "time_allowed": "3h",
+    "board": "CBSE"
+  },
+  "total_questions": 5,
+  "solutions": [
+    {
+      "question_number": "1",
+      "answer": "(A) Both A and R are true, and R is the correct explanation of A.",
+      "steps": [
+        "Step 1: Analyze Assertion (A). Tumours are formed by uncontrolled cell division in somatic (body) cells. Somatic cells divide via mitosis. Therefore, errors in mitosis (such as uncontrolled division or failure of apoptosis) lead to tumour formation. Meiosis occurs only in germ cells to produce gametes and does not directly cause tumours in body tissues. Thus, Assertion (A) is True.",
+        "Step 2: Analyze Reason (R). Faulty meiosis results in aneuploidy (abnormal chromosome number) in gametes. If such gametes are fertilized, it can lead to early pregnancy loss (miscarriage) or reduced fertility. Errors in mitosis lead to aneuploidy in somatic cells, which can disrupt normal cell function and contribute to uncontrolled growth (tumours). Thus, Reason (R) is True.",
+        "Step 3: Evaluate the causal link. The assertion states that tumours are a result of mitotic errors, not meiotic errors. The reason explains why: meiotic errors affect gametes (leading to fertility issues/pregnancy loss), whereas mitotic errors affect body cells (leading to abnormal chromosome numbers in somatic cells, which is the context for tumour formation). Therefore, Reason (R) correctly explains why Assertion (A) is true."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly identifying that both statements are true and that the reason provides the correct explanation for the assertion."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "(B) Both A and R are true, but R is NOT the correct explanation of A.",
+          "why": "Students might think that while both statements are true, the reason only describes the consequences of errors in general and doesn't explicitly link mitotic errors to tumour formation. However, the reason contrasts the outcomes of meiotic vs. mitotic errors, which directly supports why tumours (a somatic issue) arise from mitosis and not meiosis."
+        },
+        {
+          "wrong": "(C) A is true but R is false.",
+          "why": "Students might incorrectly believe that faulty meiosis does not cause early pregnancy loss or reduced fertility, or that mitotic errors do not lead to abnormal chromosome numbers in body cells. In reality, both parts of the reason are biologically accurate."
+        },
+        {
+          "wrong": "(D) A is false but R is true.",
+          "why": "Students might confuse the roles of mitosis and meiosis, thinking that meiosis errors can directly cause tumours in body cells. However, meiosis is limited to germ cells, so its errors do not directly lead to tumour formation in somatic tissues."
+        }
+      ],
+      "confidence": 0.95,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "21",
+      "answer": "Two miscible liquids can be separated by distillation if their boiling points differ by at least 25°C.",
+      "steps": [
+        "The minimum difference in boiling points required for the separation of two miscible liquids by distillation is 25°C.",
+        "If the boiling points are closer than 25°C, fractional distillation is used instead of simple distillation."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly stating the minimum difference in boiling points as 25°C."
+        },
+        {
+          "marks": 1,
+          "for": "Mentioning that fractional distillation is used when the difference is less than 25°C."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Stating that the boiling points must be exactly 25°C apart.",
+          "why": "The question asks for the minimum difference, not an exact value."
+        },
+        {
+          "wrong": "Saying that any difference in boiling points allows separation by distillation.",
+          "why": "This is incorrect because if the difference is less than 25°C, fractional distillation is required."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "22",
+      "answer": "49 N",
+      "steps": [
+        "Given: mass (m) = 5 kg, acceleration due to gravity (g) = 9.8 m s⁻²",
+        "Formula for gravitational force (weight): F = m × g",
+        "Substitute the values: F = 5 kg × 9.8 m s⁻²",
+        "Calculate the product: F = 49 N"
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly stating the formula F = m × g and substituting the given values"
+        },
+        {
+          "marks": 1,
+          "for": "Correctly calculating the final answer with the appropriate unit (N)"
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "49 kg",
+          "why": "Using the unit of mass (kg) instead of the unit of force (N) for the final answer"
+        },
+        {
+          "wrong": "4.9 N",
+          "why": "Incorrectly multiplying 5 by 9.8, leading to a decimal point error"
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "26",
+      "answer": "Scientists decide which details to include or ignore based on the level of accuracy required for the model and the complexity of the system being studied.",
+      "steps": [
+        "Scientists decide which details to include or ignore based on the level of accuracy required for the model and the complexity of the system being studied.",
+        "Example of a detail included: The mass of the cricket ball and the force applied by the bat are included to calculate the trajectory and speed of the ball.",
+        "Example of a detail ignored: The texture of the cricket ball and the air resistance are ignored to simplify the model and focus on the basic physics of the hit."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correctly stating the basis for deciding which details to include or ignore (level of accuracy and complexity)."
+        },
+        {
+          "marks": 1,
+          "for": "Providing a valid example of a detail included in the model."
+        },
+        {
+          "marks": 1,
+          "for": "Providing a valid example of a detail ignored in the model."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Scientists decide based on personal preference.",
+          "why": "This is incorrect because scientific models are based on objective criteria such as accuracy and complexity, not personal preference."
+        },
+        {
+          "wrong": "All details are included to make the model as realistic as possible.",
+          "why": "This is incorrect because including all details would make the model too complex and difficult to analyze; simplification is a key aspect of modeling."
+        }
+      ],
+      "confidence": 0.95,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    },
+    {
+      "question_number": "31",
+      "answer": "Friction is a contact force opposing relative motion; an object moves when applied force exceeds limiting friction. For constant velocity, the frictional force equals the applied force F due to zero net force (Newton's First Law).",
+      "steps": [
+        "Define friction as a contact force that opposes the relative motion or tendency of motion between two surfaces in contact.",
+        "State that an object overcomes friction and starts moving when the applied force exceeds the limiting friction (maximum static friction).",
+        "Identify that constant velocity implies zero acceleration (a = 0).",
+        "Apply Newton's Second Law (F_net = ma) to show that since a = 0, the net force acting on the table is zero.",
+        "Conclude that the magnitude of the frictional force is equal to F, as it must balance the applied force to maintain equilibrium."
+      ],
+      "mark_split": [
+        {
+          "marks": 1,
+          "for": "Correct definition of friction as a force opposing relative motion."
+        },
+        {
+          "marks": 1,
+          "for": "Correct condition for starting motion: Applied force > Limiting friction."
+        },
+        {
+          "marks": 1,
+          "for": "Correct application of Newton's First/Second Law to constant velocity (a=0, F_net=0)."
+        },
+        {
+          "marks": 1,
+          "for": "Correct conclusion that frictional force magnitude equals F."
+        },
+        {
+          "marks": 1,
+          "for": "Clear justification linking zero acceleration to balanced forces."
+        }
+      ],
+      "common_mistakes": [
+        {
+          "wrong": "Friction is always less than the applied force.",
+          "why": "Incorrect; friction adjusts to match the applied force up to the limiting value. In this case, it is exactly equal to F."
+        },
+        {
+          "wrong": "The frictional force is zero because the table is moving.",
+          "why": "Incorrect; kinetic friction acts during motion. It is not zero unless the surface is frictionless."
+        }
+      ],
+      "confidence": 1.0,
+      "verified_by": "none",
+      "needs_teacher_check": false
+    }
+  ]
+}
