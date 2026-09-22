@@ -82,10 +82,32 @@ Rules:
 12. If a section header (e.g. "Section A") is visible for the question, record it in section; otherwise use null.
 13. Set has_figure to true only when a diagram, figure, graph or plot belongs to the question; otherwise false.
 14. If the question offers an internal choice (an "OR" alternative), set choice_group to the question number; otherwise use null.
-15. Return ONLY the requested JSON object, no markdown fences, no commentary.
+15. Extract paper metadata when visible: subject, class, and board.
+16. Use null when any metadata cannot be determined.
+17. Return ONLY the requested JSON object, no markdown fences, no commentary.
 
 Required JSON shape:
-{"questions": [{"question_number": "1", "question_text": "...", "marks": 5, "question_type": "descriptive", "options": [], "source_page": 1, "confidence": 0.96, "section": null, "has_figure": false, "choice_group": null}]}
+{
+  "metadata": {
+    "subject": null,
+    "class": null,
+    "board": null
+  },
+  "questions": [
+    {
+      "question_number": "1",
+      "question_text": "...",
+      "marks": 5,
+      "question_type": "descriptive",
+      "options": [],
+      "source_page": 1,
+      "confidence": 0.96,
+      "section": null,
+      "has_figure": false,
+      "choice_group": null
+    }
+  ]
+}
 """
 
 USER_PROMPT = (
@@ -196,25 +218,39 @@ def _parse_item(item: dict, i: int, default_page: int) -> dict:
     return qd
 
 
-def parse_and_validate(raw_text: str, default_page: int = 1) -> list[dict]:
+def parse_and_validate(
+    raw_text: str, default_page: int = 1
+) -> list[dict]:
     """Parse model JSON into normalized dicts. Raises ExtractionError."""
     import re as _re
 
     cleaned = _strip_fences(raw_text)
+
     try:
         data = json.loads(cleaned)
     except json.JSONDecodeError as e:
         raise ExtractionError(f"Model did not return valid JSON: {e}") from e
+
     if not isinstance(data, dict) or "questions" not in data:
-        raise ExtractionError("Model response missing required top-level 'questions' key")
+        raise ExtractionError(
+            "Model response missing required top-level 'questions' key"
+        )
+
     if not isinstance(data["questions"], list):
         raise ExtractionError("'questions' must be a list")
+
     out = []
+
     for i, item in enumerate(data["questions"]):
         qd = _parse_item(item, i, default_page)
-        if qd["choice_group"] is None and _re.search(r"\bOR\b", qd.get("question_text", "")):
+
+        if qd["choice_group"] is None and _re.search(
+            r"\bOR\b", qd.get("question_text", "")
+        ):
             qd["choice_group"] = qd["question_number"]
+
         out.append(qd)
+
     return out
 
 
@@ -279,10 +315,30 @@ def _vision_call(data_url: str, model: str) -> tuple[str, str]:
     return content, resp.choices[0].finish_reason
 
 
-def _extract_data_url(data_url: str, source_page: int, model: str) -> list[dict]:
-    content, _ = _vision_call(data_url, model)
-    return parse_and_validate(content, default_page=source_page)
+def _extract_data_url(
+    data_url: str, source_page: int, model: str
+) -> tuple[list[dict], dict]:
 
+    content, _ = _vision_call(data_url, model)
+
+    cleaned = _strip_fences(content)
+    try:
+        data = json.loads(cleaned)
+    except json.JSONDecodeError as e:
+        raise ExtractionError(f"Model did not return valid JSON: {e}") from e
+
+    if not isinstance(data, dict) or "questions" not in data:
+        raise ExtractionError(
+            "Model response missing required top-level 'questions' key"
+        )
+
+    metadata = data.get("metadata", {})
+    if not isinstance(metadata, dict):
+        metadata = {}
+
+    items = parse_and_validate(content, default_page=source_page)
+
+    return items, metadata
 
 def _find_split_row(image: Image.Image, search_radius: int = 120) -> int:
     """Row near the vertical middle cutting through whitespace, not text."""
@@ -342,7 +398,9 @@ def _merge_tile_questions(top: list[dict], bottom: list[dict]) -> list[dict]:
     return merged
 
 
-def _extract_page(image: Image.Image, source_page: int, model: str) -> list[dict]:
+def _extract_page(
+    image: Image.Image, source_page: int, model: str
+) -> tuple[list[dict], dict]:
     """Extract one page; tile-split with overlap only on token-budget overflow."""
     try:
         return _extract_data_url(_pil_to_data_url(image), source_page, model)
@@ -356,13 +414,21 @@ def _extract_page(image: Image.Image, source_page: int, model: str) -> list[dict
         split = _find_split_row(image)
         tiles = [image.crop((0, 0, w, split + overlap)),
                  image.crop((0, split - overlap, w, h))]
-        top = _extract_data_url(_pil_to_data_url(tiles[0]), source_page, model)
-        bottom = _extract_data_url(_pil_to_data_url(tiles[1]), source_page, model)
-        return _merge_tile_questions(top, bottom)
+        top, top_metadata = _extract_data_url(
+            _pil_to_data_url(tiles[0]), source_page, model
+        )
+        bottom, bottom_metadata = _extract_data_url(
+            _pil_to_data_url(tiles[1]), source_page, model
+        )
+        metadata = {**bottom_metadata, **top_metadata}
+        return _merge_tile_questions(top, bottom), metadata
 
-
-def assemble_paper(questions: list[Question], source_bytes: list[bytes],
-                   status: str = "ready") -> Paper:
+def assemble_paper(
+    questions: list[Question],
+    source_bytes: list[bytes],
+    metadata: dict | None = None,
+    status: str = "ready",
+) -> Paper:
     """Assemble a canonical Paper (same paper_id/fingerprint convention as PDF ingestion)."""
     h = hashlib.sha256()
     for b in source_bytes:
@@ -373,6 +439,9 @@ def assemble_paper(questions: list[Question], source_bytes: list[bytes],
         paper_id=f"pap_{fingerprint[:8]}",
         fingerprint=fingerprint,
         status=status,
+        subject=metadata.get("subject") if metadata else None,
+        class_name=metadata.get("class") if metadata else None,
+        board=metadata.get("board") if metadata else None,
         questions=questions,
         total_questions=len(questions),
         total_marks=sum(q.marks or 0 for q in questions) or None,
@@ -384,20 +453,26 @@ def extract_paper_from_image_bytes(data: bytes, source_page: int = 1,
                                    model: str | None = None) -> Paper:
     """Image bytes -> canonical Paper."""
     image = Image.open(io.BytesIO(data)).convert("RGB")
-    items = _extract_page(image, source_page, model or EXTRACTION_MODEL)
-    return assemble_paper([to_canonical(q) for q in items], [data])
-
+    items, metadata = _extract_page(
+        image, source_page, model or EXTRACTION_MODEL
+    )
+    return assemble_paper(
+        [to_canonical(q) for q in items], [data], metadata
+    )
 
 def extract_paper_from_image_file(path: str | Path, page_number: int = 1,
                                   model: str | None = None) -> Paper:
     """Image file (PNG/JPEG/WebP) -> canonical Paper."""
     raw = load_image_bytes(path)
     image = Image.open(io.BytesIO(raw)).convert("RGB")
-    items = _extract_page(image, page_number, model or EXTRACTION_MODEL)
+    items, metadata = _extract_page(
+        image, page_number, model or EXTRACTION_MODEL
+    )
     for q in items:
         q["source_page"] = page_number
-    return assemble_paper([to_canonical(q) for q in items], [raw])
-
+    return assemble_paper(
+        [to_canonical(q) for q in items], [raw], metadata
+    )
 
 def extract_paper_from_images(paths: list[str | Path],
                               model: str | None = None) -> Paper:
@@ -406,19 +481,24 @@ def extract_paper_from_images(paths: list[str | Path],
     merged: list[dict] = []
     seen: set[tuple] = set()
     sources: list[bytes] = []
+    metadata: dict = {}
     for idx, p in enumerate(paths, start=1):
         raw = load_image_bytes(p)
         sources.append(raw)
         image = Image.open(io.BytesIO(raw)).convert("RGB")
-        for q in _extract_page(image, idx, model):
+        items, page_metadata = _extract_page(image, idx, model)
+        if not metadata:
+            metadata = page_metadata
+        for q in items:
             q["source_page"] = idx
             key = (q["question_number"].strip(), q["question_text"].strip()[:200])
             if key in seen:
                 continue
             seen.add(key)
             merged.append(q)
-    return assemble_paper([to_canonical(q) for q in merged], sources)
-
+    return assemble_paper(
+        [to_canonical(q) for q in merged], sources, metadata
+    )
 
 def to_langgraph_questions(paper: Paper) -> list[dict]:
     """Canonical questions as plain dicts for the solve graph / answer stage."""

@@ -16,7 +16,12 @@ class Paper(BaseModel):
     paper_id: str
     fingerprint: str
     status: Literal['parsing', 'solving', 'ready', 'failed']
+
+    subject: Optional[str] = None
+    class_name: Optional[str] = None
+    board: Optional[str] = None
+
     questions: List[Question] = Field(default_factory=list)
-    total_questions: Optional[int]= None
-    total_marks: Optional[int]=None
+    total_questions: Optional[int] = None
+    total_marks: Optional[int] = None
     sections: List[str] = Field(default_factory=list)
