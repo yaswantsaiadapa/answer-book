@@ -10,22 +10,32 @@ Covers:
 import sys
 from pathlib import Path
 import pytest
-from sqlalchemy import inspect
+
+# 1. Skip entire file if sqlalchemy is not installed (e.g. offline CI runner)
+pytest.importorskip("sqlalchemy")
+
+# 2. Mark as live/db test so `-m "not live"` in GitHub Actions excludes it
+pytestmark = [pytest.mark.live, pytest.mark.db]
 
 # Ensure project root is in sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from app.store.connection import engine, get_db_session
-from app.store.models import PaperTable, SolvedQuestionTable
-from app.tools.hash_utils import generate_question_signature, normalize_text
-from app.tools.paper_cache_tool import (
-    check_paper_cache,
-    get_paper_resume_info,
-    mark_paper_status,
-    upsert_paper_record,
-)
-from app.tools.question_lookup_tool import lookup_cached_question
-from app.tools.question_save_tool import save_question_checkpoint
+# 3. Gracefully skip if database/environment config is not present
+try:
+    from sqlalchemy import inspect
+    from app.store.connection import engine, get_db_session
+    from app.store.models import PaperTable, SolvedQuestionTable
+    from app.tools.hash_utils import generate_question_signature, normalize_text
+    from app.tools.paper_cache_tool import (
+        check_paper_cache,
+        get_paper_resume_info,
+        mark_paper_status,
+        upsert_paper_record,
+    )
+    from app.tools.question_lookup_tool import lookup_cached_question
+    from app.tools.question_save_tool import save_question_checkpoint
+except Exception as e:
+    pytest.skip(f"Database environment not configured: {e}", allow_module_level=True)
 
 TEST_PAPER_ID = "test_pytest_paper_001"
 TEST_FINGERPRINT = "test_pytest_fp_abcdef123456"
