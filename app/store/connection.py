@@ -13,12 +13,14 @@ from app.core.config import settings
 
 # Engine configured with pool_pre_ping to automatically recover from dropped connections,
 # and pool_recycle=3600 to refresh stale connections every hour.
+db_url = settings.DATABASE_URL or "sqlite:///:memory:"
 engine = create_engine(
-    settings.DATABASE_URL,
+    db_url,
     pool_pre_ping=True,
     pool_recycle=3600,
     echo=False,
 )
+
 
 SessionLocal = sessionmaker(
     bind=engine,

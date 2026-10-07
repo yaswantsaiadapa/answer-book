@@ -1,28 +1,22 @@
 """Centralized configuration for the application.
 
-Loads environment variables strictly from .env for LLM integration
-and PostgreSQL database storage.
+Loads environment variables for Groq LLM integration and PostgreSQL database.
 """
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+import os
+from dotenv import load_dotenv
+
+# Load variables from .env file if present
+load_dotenv()
 
 
-class Settings(BaseSettings):
-    """Application settings loaded strictly from environment / .env file."""
+class Settings:
+    """Application settings and configuration."""
 
-    # Required: Must be defined in .env
-    GROQ_API_KEY: str
-    DATABASE_URL: str
-
-    # Optional model hyperparameters with safe defaults
-    GROQ_MODEL: str = "qwen/qwen3.8-27b"
-    GROQ_TEMPERATURE: float = 0.1
-
-    model_config = SettingsConfigDict(
-        env_file=".env",
-        env_file_encoding="utf-8",
-        extra="ignore",
-    )
+    GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
+    GROQ_MODEL: str = os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b")
+    GROQ_TEMPERATURE: float = float(os.getenv("GROQ_TEMPERATURE", "0.1"))
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
 
 
 settings = Settings()
